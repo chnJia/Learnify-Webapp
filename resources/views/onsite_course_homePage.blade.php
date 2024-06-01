@@ -3,30 +3,34 @@
 <link rel="stylesheet" href="app.css">
 
 <style>
-    .sidebar-container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 0px;
-        margin-top: 0px;
-    }
-
-    .flex-row {
+      .flex-row {
         flex: 1;
         display: flex;
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%; 
     }
 
     .sidebar {
         background-color: #254E7A;
         width: 250px;
+        flex-shrink: 0; 
         margin-top: -20px;
-        height: 160vh;
     }
 
     .main {
         flex: 1;
         background-color: #F3F8FF;
         margin-top: -20px;
+        overflow-y: auto; 
     }
         
     .container-box {
@@ -48,8 +52,9 @@
     .schedule-container {
         background-color: #c6deff;
         width: 100%;
-        height: 17%;
+        height: auto;
         border-radius: 10px;
+        padding: 5px 10px 10px 10px;
     }
 
     .course-container {
@@ -122,40 +127,19 @@
 
     footer {
         background-color: #111B25;
-        margin-top: 350px;
         padding: 20px 0px 20px 20px;
-        position: relative;
     }
+
 
     .text-uppercase {
         padding-left: 100px;
     }
 
     .profile-image {
-        width: 70px; 
-        height: 70px; 
+        width: 60; 
+        height: 60px; 
         object-fit: cover;  
         border-radius: 50%;
-    }
-    
-    .onsite-button {
-        color: white;
-        font-weight: bold;
-        background-color: #254E7A;
-        border-radius: 20px;
-        padding: 3px 15px 3px 15px;
-        border-color: rgb(141, 141, 141);
-    }
-
-    .online-button {
-        margin-left: 20px;
-        color: white;
-        font-weight: bold;
-        background-color: gray;
-        border-radius: 20px;
-        padding: 3px 15px 3px 15px;
-        border-color: gray;
-        margin-left: -15px;
     }
 
     .track-teacher-button {
@@ -166,6 +150,51 @@
         border-radius: 20px;
         padding: 3px 25px 3px 25px;
         border-color: rgb(141, 141, 141);
+        margin-top: 0px;
+    }
+    .profile-row {
+        display: flex;
+        align-items: center;
+        gap: 10px; 
+    }
+
+    .profile-col {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .profile-image {
+        max-width: 100%;
+        border-radius: 50%;
+    }
+
+    .tab-button {
+        color: #254E7A;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 3px 15px;
+        border: none;
+        position: relative;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .tab-button.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 15%;
+        border-radius: 20px;
+        background-color: #254E7A;
+        position: absolute;
+        left: 0;
+    }
+
+    .tabMenu-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
     }
 </style>
 
@@ -186,32 +215,32 @@
             <h1>Hi, </h1>
             <div class="schedule-container container-fluid">
                 <h4><strong>Upcoming Schedule</strong> </h4>
-                <div class="row button-container">
-                    <div class="col-md-1">
-                        <button type="submit" class="onsite-button">Onsite</button>
+                <div class="row tabMenu-container">
+                    <div class="col">
+                        <p class="tab-button onsite-button active" onclick="selectTab(this)">Onsite</p>
                     </div>
-                    <div class="col-md-2">
-                        <button type="submit" class="online-button">Online</button>
-                    </div>
-                </div>
-                <div class="profile">
-                    <h4 style="margin-top: 20px;"><strong>Programming With React</strong></h4>
-                    <div class="row">
-                        <div class="col-md-1">
-                            <img class="img-fluid rounded-circle profile-image" src="{{asset('rina-sari.jpeg')}}" alt="Card image cap">
-                        </div>
-                        <div class="col-md-2">
-                            <div class="profile-name" style="margin-top:20px"><h4><strong>Rina Sari, S.Kom.</strong></h4></div>
-                        </div>
-                        <div class="col-md-2">
-                            <button type="submit" class="track-teacher-button">Track Teacher</button>
-                        </div>
-                        <div class="col-md-4">
-                            <p class="text-muted" style="margin-top: 20px;"><i>*Only available 2 hours before the course started</i></p>
-                        </div>
+                    <div class="col">
+                        <p class="tab-button online-button" onclick="selectTab(this)">Online</p>
                     </div>
                 </div>
                 
+                <div class="profile">
+                    <h4 style="margin-top: 20px;"><strong>Programming With React</strong></h4>
+                    <div class="profile-row" style="display: flex; align-items: center;">
+                        <div class="profile-col" style="margin-left: 0px;">
+                            <img class="img-fluid rounded-circle profile-image" src="{{asset('rina-sari.jpeg')}}" alt="Card image cap">
+                        </div>
+                        <div class="profile-col">
+                            <h4><strong>Rina Sari, S.Kom.</strong></h4>
+                        </div>
+                        <div class="profile-col">
+                            <button type="submit" class="track-teacher-button">Track Teacher</button>
+                        </div>
+                        <div class="profile-col">
+                            <p class="text-muted"><i>*Only available 2 hours before the course started</i></p>
+                        </div>
+                    </div>
+                </div>
            </div>
            <div class="course-container container-fluid">
                 <h4 class="course-title">Courses</h4>
@@ -373,4 +402,13 @@
     function redirectToCourseDetail() {
         window.location.href = "{{ url('/react-course-detail-lessons') }}";
     }
+
+    function selectTab(button) {
+    var tabs = document.querySelectorAll('.tab-button');
+    tabs.forEach(function(tab) {
+        tab.classList.remove('active');
+    });
+    button.classList.add('active');
+}
+
 </script>

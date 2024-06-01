@@ -3,30 +3,34 @@
 <link rel="stylesheet" href="app.css">
 
 <style>
-    .sidebar-container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 0px;
-        margin-top: 0px;
-    }
-
     .flex-row {
         flex: 1;
         display: flex;
     }
 
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%; 
+    }
+
     .sidebar {
         background-color: #254E7A;
         width: 250px;
+        flex-shrink: 0; 
         margin-top: -20px;
-        height: 160vh;
     }
 
     .main {
         flex: 1;
         background-color: #F3F8FF;
         margin-top: -20px;
+        overflow-y: auto; 
     }
         
     .container-box {
@@ -48,8 +52,9 @@
     .schedule-container {
         background-color: #c6deff;
         width: 100%;
-        height: 17%;
+        height: auto;
         border-radius: 10px;
+        padding: 5px 10px 10px 10px;
     }
 
     .course-container {
@@ -79,6 +84,7 @@
         margin-left: 30px;
         background-color: white;
         box-shadow: 2px 2px 8px gray;
+        padding-bottom: 10px;
     }
 
     .image-grid {
@@ -122,9 +128,7 @@
 
     footer {
         background-color: #111B25;
-        margin-top: 350px;
         padding: 20px 0px 20px 20px;
-        position: relative;
     }
 
     .text-uppercase {
@@ -136,99 +140,100 @@
 @include('_homeNavbar');
 
 <div class="content-wrapper">
-<div class="sidebar-container container-fluid">
-    <div class="d-flex flex-row">
-        <div class="sidebar p-2">
-            <div class="container-box container-fluid">
-                <div class="text">
-                    <h4><strong>Role</strong></h3>
-                    <p style="color: white; font-size: 16px;"><strong>Student</strong></p>
-                </div>
-            </div>
-        </div>
-        <div class="main p-2 container-fluid">
-            <h1>Hi, </h1>
-            <div class="schedule-container container-fluid">
-                <h4><strong>Upcoming Schedule</strong> </h4>
-           </div>
-           <div class="course-container container-fluid">
-                <h4 class="course-title">Courses</h4>
-                <div class="course-material-container container-fluid">
-                    <div class="image-grid">
-                        <div class="card" style="width: 100%;">
-                            <img class="card-img-top" src="{{asset('react-js-banner-big-1.jpg')}}" alt="Card image cap" onclick="redirectToCourseDetail()">
-                            <div class="card-body">
-                                <div class="card-text">
-                                    <p class="course-title">Programming With React</p>
-                                    <p><strong>Price Range: </strong>IDR 289.000 - 399.000</p>
-                                    <p><strong>Rating: </strong> 4.8 / 5</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 100%;">
-                            <img class="card-img-top" src="{{asset('AlgebraMath.jpeg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="card-text">
-                                    <p class="course-title">Algebra Math</p>
-                                    <p><strong>Price Range: </strong>IDR 200.000 - 320.000</p>
-                                    <p><strong>Rating: </strong>4 / 5</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 100%;">
-                            <img class="card-img-top" src="{{asset('Biology.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <div class="card-text">
-                                    <p class="course-title">Biology for SMA</p>
-                                    <p> <strong>Price Range: </strong>200.000 - 320.000</p>
-                                    <p><strong>Rating: </strong>4.1 / 5</p>
-                                </div>
-                            </div>
-                        </div>
+    <div class="sidebar-container container-fluid">
+        <div class="d-flex flex-row">
+            <div class="sidebar p-2">
+                <div class="container-box container-fluid">
+                    <div class="text">
+                        <h4><strong>Role</strong></h3>
+                        <p style="color: white; font-size: 16px;"><strong>Student</strong></p>
                     </div>
                 </div>
-                
-                <div class="popular-course">
-                    <h4 class="course-title">Popular Courses</h4>
-                    <div class="popular-material-container container-fluid">
+            </div>
+            <div class="main p-2 container-fluid">
+                <h1>Hi, </h1>
+                <div class="schedule-container container-fluid">
+                    <h4><strong>Upcoming Schedule</strong> </h4>
+                    <p class="text-muted">There is no upcoming schedule</p>
+            </div>
+            <div class="course-container container-fluid">
+                    <h4 class="course-title">Courses</h4>
+                    <div class="course-material-container container-fluid">
                         <div class="image-grid">
                             <div class="card" style="width: 100%;">
-                                <img class="card-img-top" src="{{asset('Ai-Course.jpg')}}" alt="Card image cap">
+                                <img class="card-img-top" src="{{asset('react-js-banner-big-1.jpg')}}" alt="Card image cap" onclick="redirectToCourseDetail()">
                                 <div class="card-body">
                                     <div class="card-text">
-                                        <p class="course-title">AI Fundamental</p>
-                                        <p><strong>Price Range: </strong>350.000 - 420.000</p>
-                                        <p><strong>Rating: </strong>4.8 / 5</p>
+                                        <p class="course-title">Programming With React</p>
+                                        <p><strong>Price Range: </strong>IDR 289.000 - 399.000</p>
+                                        <p><strong>Rating: </strong> 4.8 / 5</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="card" style="width: 100%;">
-                                <img class="card-img-top" src="{{asset('blockchain.png')}}" alt="Card image cap">
+                                <img class="card-img-top" src="{{asset('AlgebraMath.jpeg')}}" alt="Card image cap">
                                 <div class="card-body">
                                     <div class="card-text">
-                                        <p class="course-title">Blockchain Fundamental</p>
-                                        <p><strong>Price Range: </strong>320.000 - 399.000</p>
+                                        <p class="course-title">Algebra Math</p>
+                                        <p><strong>Price Range: </strong>IDR 200.000 - 320.000</p>
                                         <p><strong>Rating: </strong>4 / 5</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="card" style="width: 100%;">
-                                <img class="card-img-top" src="{{asset('Python.jpg')}}" alt="Card image cap">
+                                <img class="card-img-top" src="{{asset('Biology.jpg')}}" alt="Card image cap">
                                 <div class="card-body">
                                     <div class="card-text">
-                                        <p class="course-title">Basic Python Learning</p>
-                                        <p><strong>Price Range: </strong>IDR 230.000 - 385.000</p>
+                                        <p class="course-title">Biology for SMA</p>
+                                        <p> <strong>Price Range: </strong>200.000 - 320.000</p>
                                         <p><strong>Rating: </strong>4.1 / 5</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="popular-course">
+                        <h4 class="course-title">Popular Courses</h4>
+                        <div class="popular-material-container container-fluid">
+                            <div class="image-grid">
+                                <div class="card" style="width: 100%;">
+                                    <img class="card-img-top" src="{{asset('Ai-Course.jpg')}}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <p class="course-title">AI Fundamental</p>
+                                            <p><strong>Price Range: </strong>350.000 - 420.000</p>
+                                            <p><strong>Rating: </strong>4.8 / 5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 100%;">
+                                    <img class="card-img-top" src="{{asset('blockchain.png')}}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <p class="course-title">Blockchain Fundamental</p>
+                                            <p><strong>Price Range: </strong>320.000 - 399.000</p>
+                                            <p><strong>Rating: </strong>4 / 5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card" style="width: 100%;">
+                                    <img class="card-img-top" src="{{asset('Python.jpg')}}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <div class="card-text">
+                                            <p class="course-title">Basic Python Learning</p>
+                                            <p><strong>Price Range: </strong>IDR 230.000 - 385.000</p>
+                                            <p><strong>Rating: </strong>4.1 / 5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-           </div>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <!-- Footer -->
