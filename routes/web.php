@@ -56,3 +56,11 @@ Route::get('/booking-form-detail-online', function() {
 Route::get('/home-onsite', function() {
     return view('onsite_course_homePage');
 })->name('onsite_course_homePage');
+
+Route::get('/home-online', function() {
+    return view('online_course_homePage');
+})->name('online_course_homePage');
+
+Route::get('/location-tracking', function() {
+    return view('location_tracking');
+})->name('location_tracking');

@@ -71,7 +71,7 @@
 
     footer {
         background-color: #111B25;
-        margin-top: 100px;
+        margin-top: 50px;
         padding: 20px 0px 20px 20px;
         position: relative;
     }

@@ -130,7 +130,6 @@
         padding: 20px 0px 20px 20px;
     }
 
-
     .text-uppercase {
         padding-left: 100px;
     }
@@ -183,14 +182,12 @@
     .tab-button.active::after {
         content: "";
         display: block;
-        width: 60;
+        width: 100%;
         height: 15%;
         border-radius: 20px;
         background-color: #254E7A;
         position: absolute;
         left: 0;
-        margin-left: 10;
-        
     }
 
     .tabMenu-container {
@@ -219,10 +216,10 @@
                 <h4><strong>Upcoming Schedule</strong> </h4>
                 <div class="row tabMenu-container">
                     <div class="col">
-                        <p class="tab-button onsite-button active" onclick="selectTab(this)">Onsite</p>
+                        <p class="tab-button onsite-button" onclick="selectTab(this)">Onsite</p>
                     </div>
                     <div class="col">
-                        <p class="tab-button online-button" onclick="selectTab(this)">Online</p>
+                        <p class="tab-button online-button active" onclick="selectTab(this)">Online</p>
                     </div>
                 </div>
                 
@@ -230,7 +227,7 @@
                     <div style="display: flex; align-items: center; margin-top: 20px; margin-right: 10px;">
                         <h4><strong>Programming With React</strong></h4>
                         <span style="margin-left: 25px;">
-                            <i class="far fa-clock" style="margin-right: 5px;"></i>17h 46m
+                            <i class="far fa-clock" style="margin-right: 5px;"></i>32h 12m
                         </span>
                     </div>
                     
@@ -240,12 +237,6 @@
                         </div>
                         <div class="profile-col">
                             <h4><strong>Rina Sari, S.Kom.</strong></h4>
-                        </div>
-                        <div class="profile-col">
-                            <button type="submit" class="track-teacher-button" onclick="redirectToTracking()">Track Teacher</button>
-                        </div>
-                        <div class="profile-col">
-                            <p class="text-muted"><i>*Only available 2 hours before the course started</i></p>
                         </div>
                     </div>
                 </div>
@@ -441,7 +432,7 @@
                         <h4><strong>Rina Sari, S.Kom.</strong></h4>
                     </div>
                     <div class="profile-col">
-                        <button type="submit" class="track-teacher-button" onclick="redirectToTracking()">Track Teacher</button>
+                        <button type="submit" class="track-teacher-button">Track Teacher</button>
                     </div>
                     <div class="profile-col">
                         <p class="text-muted"><i>*Only available 2 hours before the course started</i></p>
@@ -466,8 +457,4 @@
                 </div>`;
             }
     }   
-
-    function redirectToTracking() {
-        window.location.href = "{{ url('/location-tracking') }}"
-    }
 </script>
