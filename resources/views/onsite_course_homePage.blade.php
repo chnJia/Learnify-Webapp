@@ -230,7 +230,7 @@
                     <div style="display: flex; align-items: center; margin-top: 20px; margin-right: 10px;">
                         <h4><strong>Programming With React</strong></h4>
                         <span style="margin-left: 25px;">
-                            <i class="far fa-clock" style="margin-right: 5px;"></i>17h 46m
+                            <i class="far fa-clock" style="margin-right: 5px;"></i>2h 46m
                         </span>
                     </div>
                     

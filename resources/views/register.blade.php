@@ -104,7 +104,7 @@
             <input class="input-field" type="password" placeholder="Password">
         </div>
         <p>Have an Account? <a href="{{ route('login') }}">Sign In here</a></p>
-        <button class="signup-button" type="submit">Sign Up</button>
+        <button class="signup-button" type="submit" onclick="redirectToHome()">Sign Up</button>
     </form>
 </div>
 
@@ -178,3 +178,11 @@
         © 2020 Copyright: Learnify
     </div>
 </footer>
+
+<script>
+    function redirectToHome() {
+        event.preventDefault();
+        alert("Submited");
+        window.location.href = "{{ url('/home') }}"
+    }
+</script>

@@ -151,7 +151,7 @@
                 </div>
             </div>
             <div class="main p-2 container-fluid">
-                <h1>Hi, </h1>
+                <h1>Hi, Richard</h1>
                 <div class="schedule-container container-fluid">
                     <h4><strong>Upcoming Schedule</strong> </h4>
                     <p class="text-muted">There is no upcoming schedule</p>

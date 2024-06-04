@@ -108,7 +108,9 @@
         overflow-y: auto;
         padding: 20px;
         display: flex;
+        bottom: 0;
         flex-direction: column-reverse;
+        margin-top: 300px;
     }
 
     .chat-bubble {

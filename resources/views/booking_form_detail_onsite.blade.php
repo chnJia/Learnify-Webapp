@@ -94,7 +94,7 @@
         <hr class="line-break">
         <div class="content container-fluid">
            <h3><strong>Student Name </strong></h3>
-           <p class="text-content">Jesslyn Winata</p>
+           <p class="text-content">Richard</p>
            <h3><strong>Address</strong></h3>
            <p class="text-content">Jl. Mandala 4 No. 9 Palmerah, Kebon Jeruk, Jakarta Barat</p>
            <h3><strong>Course Schedule</strong></h3>
